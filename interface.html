@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Serif+JP&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+        }
+        .content{
+            color: rgb(194, 200, 201);
+        }
+        .code{
+            border: 1px solid black; 
+            width: fit-content; 
+            border-radius: 8px; 
+            color: white; 
+            background-color: black; 
+            padding: 4px;
+        }
+    </style>
+    <title>Interface</title>
+</head>
+<body
+    style="font-family: 'Merriweather', serif;font-family: 'Noto Serif JP', serif; margin: 35px; background-image: url(2.jpg); background-attachment: fixed;">
+    <h1 class="content">Interface</h1>
+    <p class="content">Another way to achieve abstraction in Java, is with interfaces. <br> <br>
+    An <b><em>interface</em></b> is a completely "abstract class" that is used to group related methods with empty bodies:</p>
+    <br>
+    <h2 class="content">Example:</h2>
+    <br>
+    <div class="code">
+        <code>
+            interface Animal <br>
+            { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void animalSound(); // interface method (does not have a body) <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void run(); // interface method (does not have a body) <br>
+            } <br>
+        </code>
+    </div>
+    <br>
+    <p class="content">To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class with the <b><em> implements</em></b> keyword (instead of <b><em>extends</em></b>). The body of the interface method is provided by the "implement" class:</p>
+    <br>
+    <div class="code">
+        <code>
+            interface Animal <br> 
+            { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsppublic void animalSound(); // interface method (does not have a body)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsppublic void sleep(); // interface method (does not have a body)<br>
+              }<br>
+              <br>
+              // Pig "implements" the Animal interface<br>
+              class Pig implements Animal <br> 
+              {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public void animalSound() <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The body of animalSound() is provided here<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("The pig says: wee wee");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public void sleep() <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The body of sleep() is provided here<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Zzz");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              }<br>
+              <br>
+              class Main <br> 
+              {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args) <br> 
+                &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;Pig myPig = new Pig();  // Create a Pig object<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;myPig.animalSound();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;myPig.sleep();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+              }<br>
+        </code>
+    </div>
+</body>
+</html>

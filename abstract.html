@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Noto+Serif+JP&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+        }
+        .content{
+            color: rgb(194, 200, 201);
+        }
+        .code{
+            border: 1px solid black; 
+            width: fit-content; 
+            border-radius: 8px; 
+            color: white; 
+            background-color: black; 
+            padding: 4px;
+        }
+    </style>
+    <title>Abstract Class</title>
+</head>
+
+<body
+    style="font-family: 'Merriweather', serif;font-family: 'Noto Serif JP', serif; margin: 35px; background-image: url(2.jpg); background-attachment: fixed;">
+    <h1 class="content">Abstract Classes and Methods</h1>
+    <br>
+    <p class="content">Data abstraction is the process of hiding certain details and showing only essential information to the user.
+        Abstraction can be achieved with either abstract classes or interfaces.</p>
+    <br>
+    <p class="content">The <b><em>abstract</em></b> keyword is a non-access modifier, used for classes and methods: </p>
+    <br>
+    <ul class="content">
+        <li style="padding: 4px;">Abstract class: &nbsp;It is a restricted class that cannot be used to create objects (to
+            access it, it must be inherited from another class).
+        </li>
+        <li style="padding: 4px;">Abstract method: &nbsp;It can only be used in an abstract class, and it does not have a
+            body. The body is provided by the subclass (inherited from).
+        </li>
+    </ul>
+    <br>
+    <p class="content">An abstract class can have both abstract and regular methods: </p>
+    <br>
+    <div class="code">
+        <code>
+            abstract class Animal <br>
+            { <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public abstract void animalSound(); <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void sleep() { <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Zzz"); <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+                } <br>
+            </code>
+    </div>
+    <br>
+    <h2 class="content">Example:</h2>
+    <br>
+    <div class="code">
+        <code>
+            abstract class Animal<br> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// Abstract method (does not have a body)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public abstract void animalSound();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;// Regular method<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public void sleep() <br> &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Zzz");
+                    <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br>
+                
+                // Subclass (inherit from Animal)<br>
+                class Pig extends Animal<br> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public void animalSound()<br> &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// The body of animalSound() is provided here<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("The pig says: wee wee");<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br>
+                class Main<br> {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;public static void main(String[] args)<br> &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pig myPig = new Pig(); // Create a Pig object<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myPig.animalSound();<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myPig.sleep();<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }<br>
+        </code>
+    </div>
+</body>
+
+</html>
